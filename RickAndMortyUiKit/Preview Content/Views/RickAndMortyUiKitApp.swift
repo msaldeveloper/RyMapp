@@ -13,6 +13,7 @@ import FirebaseCore
 @main
 struct RickAndMortyUiKitApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
             SplashScreen()

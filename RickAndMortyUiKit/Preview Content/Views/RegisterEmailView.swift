@@ -1,13 +1,13 @@
 //
-//  LoginView.swift
+//  RegisterEmailView.swift
 //  RickAndMortyUiKit
 //
-//  Created by Mario Saldana on 17/02/25.
+//  Created by Mario Saldana on 18/02/25.
 //
 
 import SwiftUI
 
-struct LoginView: View {
+struct RegisterEmailView: View {
     @State private var textFieldEmail = ""
     @State private var textFieldPassword = ""
     @ObservedObject var authenticationViewModel: AuthenticationViewModel
@@ -18,6 +18,7 @@ struct LoginView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 DismissView()
+                
                 Group {
                     Text("Bienvenido a")
                     Text("Rick and Morty app")
@@ -64,9 +65,9 @@ struct LoginView: View {
                         .padding(.vertical)
                         .padding(.horizontal)
                     Button {
-                        authenticationViewModel.login(email: textFieldEmail, password: textFieldPassword)
+                        authenticationViewModel.createNewUser(email: textFieldEmail, password: textFieldPassword)
                     } label: {
-                        Label("Login", systemImage: "arrow.right.circle")
+                        Label("Aceptar", systemImage: "arrow.right.circle")
                             .padding(.horizontal, 10)
                             .padding(.vertical, 2)
                     }
@@ -80,6 +81,7 @@ struct LoginView: View {
                             .foregroundColor(.red)
                             .padding(.top, 20)
                     }
+
                 }.padding(.horizontal, 30)
             }
         }
@@ -87,5 +89,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView(authenticationViewModel: AuthenticationViewModel())
+    RegisterEmailView(authenticationViewModel: AuthenticationViewModel())
 }
